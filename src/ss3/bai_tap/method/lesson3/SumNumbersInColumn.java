@@ -1,12 +1,13 @@
-package ss2.bai_tap.method.lesson4;
+package ss3.bai_tap.method.lesson3;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class SumNumbersOnTheMainDiagonalOfMatrix {
+public class SumNumbersInColumn {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int x = inputInt(scanner, "Nhập số hàng và số cột muốn khởi tạo: ");
+        int x = inputInt(scanner, "Nhập số hàng muốn khởi tạo: ");
+        int y = inputInt(scanner, "Nhập số cột muốn khởi tạo: ");
         int max;
         int min;
         do {
@@ -16,23 +17,31 @@ public class SumNumbersOnTheMainDiagonalOfMatrix {
                 System.out.println("Giá trị bé nhất phải nhỏ hơn hoặc bằng giá trị lớn nhất!");
             }
         } while (min > max);
-        int [][] array = create2DArray(x,max,min);
+        int [][] array = create2DArray(x,y,max,min);
         System.out.println("Mảng vừa tạo là: " + Arrays.deepToString(array));
-        System.out.println("Tổng các số ở đường chéo chính của ma trận vuông là: " + sumNumberMainDiagonal(array));
+        int colum;
+        do {
+            System.out.printf("Nhập số cột muốn tính tổng (1-%d): ",y);
+            colum = scanner.nextInt() - 1;
+            if (colum < 0 || colum >= y){
+                System.out.println("Giá trị nhập vào không hợp lệ!");
+            }
+        }while (colum < 0 || colum >= y);
+        System.out.println("Tổng là: " + sumNumber(array, colum));
     }
-    public static int[][] create2DArray(int x, int max, int min){
-        int [][] arr = new int[x][x];
+    public static int[][] create2DArray(int x, int y, int max, int min){
+        int [][] arr = new int[x][y];
         for (int i = 0; i < x;i++){
-            for (int j = 0; j < x;j++){
+            for (int j = 0; j < y;j++){
                 arr[i][j] = (int)(Math.random() * (max - min + 1)) + min;
             }
         }
         return arr;
     }
-    public static int sumNumberMainDiagonal(int[][] arr){
+    public static int sumNumber(int[][] arr, int col){
         int sum = 0;
-        for (int i = 0;i < arr.length;i++) {
-            sum += arr[i][i];
+        for (int[] row : arr) {
+            sum += row[col];
         }
         return sum;
     }

@@ -1,4 +1,4 @@
-package ss2.thuc_hanh.method;
+package ss3.thuc_hanh.method;
 
 import java.util.Scanner;
 

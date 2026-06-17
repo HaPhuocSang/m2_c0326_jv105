@@ -1,4 +1,4 @@
-package ss2.bai_tap.method.lesson1;
+package ss3.bai_tap.method.lesson1;
 
 import java.util.Arrays;
 import java.util.Scanner;

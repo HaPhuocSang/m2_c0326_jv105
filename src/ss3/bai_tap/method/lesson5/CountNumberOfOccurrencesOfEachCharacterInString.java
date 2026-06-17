@@ -1,4 +1,4 @@
-package ss2.bai_tap.method.lesson5;
+package ss3.bai_tap.method.lesson5;
 
 import java.util.Scanner;
 
