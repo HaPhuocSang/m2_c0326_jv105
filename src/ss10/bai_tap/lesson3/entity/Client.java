@@ -1,9 +1,18 @@
-package ss4.thuc_hanh.quan_ly_hoc_sinh;
+package ss10.bai_tap.lesson3.entity;
 
-public class Student {
+public class Client {
     private int id;
     private String name;
     private String address;
+
+    public Client() {
+    }
+
+    public Client(int id, String name, String address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+    }
 
     public int getId() {
         return id;
@@ -29,12 +38,8 @@ public class Student {
         this.address = address;
     }
 
-    public Student() {
-    }
-
-    public Student(int id, String name, String address) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
+    @Override
+    public String toString() {
+        return "Client{" + "id=" + id + ", name='" + name + '\'' + ", address='" + address + '\'' + '}';
     }
 }
