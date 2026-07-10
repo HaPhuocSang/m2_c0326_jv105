@@ -21,7 +21,7 @@ public class TruckView {
 
     public static Truck inputNewData() {
         System.out.println("------ Chức năng thêm mới xe tải------");
-        String licensePlate = InputUntil.inputString("Nhập biển kiểm soát: ");
+        String licensePlate = InputUntil.checkLicensePlateForTruck("Nhập biển kiểm soát: ");
         String manufacturerName = InputUntil.selectManufacturerName();
         int yearOfManufacture = InputUntil.inputInt("Nhập năm sản xuất: ");
         String ownerName = InputUntil.inputString("Nhập chủ sở hữu: ");
@@ -31,7 +31,7 @@ public class TruckView {
 
     public static Truck editData() {
         System.out.println("------ Chức năng cập nhật thông tin xe tải ------");
-        String licensePlate = InputUntil.inputString("Nhập biển kiểm soát: ");
+        String licensePlate = InputUntil.checkLicensePlateForTruck("Nhập biển kiểm soát: ");
         String newManufacturerName = InputUntil.selectManufacturerName();
         int newYearOfManufacture = InputUntil.inputInt("Nhập năm sản xuất: ");
         String newOwnerName = InputUntil.inputString("Nhập chủ sở hữu: ");
@@ -41,6 +41,6 @@ public class TruckView {
 
     public static String deleteData() {
         System.out.println("------ Chức năng xoá xe tải ------");
-        return InputUntil.inputString("Nhập biển kiểm soát: ");
+        return InputUntil.checkLicensePlateForTruck("Nhập biển kiểm soát: ");
     }
 }

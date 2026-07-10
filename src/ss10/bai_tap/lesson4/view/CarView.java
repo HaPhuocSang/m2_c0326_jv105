@@ -20,7 +20,7 @@ public class CarView {
     }
     public static Car inputNewData() {
         System.out.println("------ Chức năng thêm mới xe ô tô ------");
-        String licensePlate = InputUntil.inputString("Nhập biển kiểm soát: ");
+        String licensePlate = InputUntil.checkLicensePlateForCar("Nhập biển kiểm soát: ");
         String manufacturerName = InputUntil.selectManufacturerName();
         int yearOfManufacture = InputUntil.inputInt("Nhập năm sản xuất: ");
         String ownerName = InputUntil.inputString("Nhập chủ sở hữu: ");
@@ -30,7 +30,7 @@ public class CarView {
     }
     public static Car editData() {
         System.out.println("------ Chức năng cập nhật thông tin xe ô tô ------");
-        String licensePlate = InputUntil.inputString("Nhập biển kiểm soát: ");
+        String licensePlate = InputUntil.checkLicensePlateForCar("Nhập biển kiểm soát: ");
         String newManufacturerName = InputUntil.selectManufacturerName();
         int newYearOfManufacture = InputUntil.inputInt("Nhập năm sản xuất: ");
         String newOwnerName = InputUntil.inputString("Nhập chủ sở hữu: ");
@@ -40,6 +40,6 @@ public class CarView {
     }
     public static String deleteData() {
         System.out.println("------ Chức năng xoá xe ô tô ------");
-        return InputUntil.inputString("Nhập biển kiểm soát: ");
+        return InputUntil.checkLicensePlateForCar("Nhập biển kiểm soát: ");
     }
 }

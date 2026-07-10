@@ -117,4 +117,28 @@ public class InputUntil {
             }
         }
     }
+
+    public static String checkLicensePlate(String message, String regex) {
+        String licensePlate;
+        do {
+            licensePlate = inputString(message);
+            if (!licensePlate.matches(regex)) {
+                System.out.println("Biển kiểm soát không đúng định dạng!");
+            }
+        } while (!licensePlate.matches(regex));
+        return licensePlate;
+    }
+
+    public static String checkLicensePlateForMotorbike(String message) {
+        return checkLicensePlate(message, "^\\d{2}-(?:[A-Z]{2}|[A-Z]\\d|\\d[A-Z])-\\d{3}\\.\\d{2}$");
+    }
+
+    public static String checkLicensePlateForCar(String message) {
+        return checkLicensePlate(message, "^\\d{2}[A-Z]-(?:\\d{2}|\\d{3})\\.(?:\\d{2}|\\d{3})$");
+    }
+
+    public static String checkLicensePlateForTruck(String message) {
+        return checkLicensePlate(message, "^\\d{2}[A-Z]-\\d{3}\\.\\d{2}$");
+    }
+
 }
